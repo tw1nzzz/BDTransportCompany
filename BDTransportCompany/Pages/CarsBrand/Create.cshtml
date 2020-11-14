@@ -1,0 +1,49 @@
+﻿@page
+@model BDTransportCompany.Pages.CarsBrand.CreateModel
+
+@{
+    ViewData["Title"] = "Добавить";
+}
+
+<h1>Добавить</h1>
+
+<h4>Марки автомобилей</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CarsBrands.CarBrand_ID" class="control-label"></label>
+                <input asp-for="CarsBrands.CarBrand_ID" class="form-control" />
+                <span asp-validation-for="CarsBrands.CarBrand_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarsBrands.Title" class="control-label"></label>
+                <input asp-for="CarsBrands.Title" class="form-control" />
+                <span asp-validation-for="CarsBrands.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarsBrands.Specifications" class="control-label"></label>
+                <input asp-for="CarsBrands.Specifications" class="form-control" />
+                <span asp-validation-for="CarsBrands.Specifications" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarsBrands.Description" class="control-label"></label>
+                <input asp-for="CarsBrands.Description" class="form-control" />
+                <span asp-validation-for="CarsBrands.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Добавить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Вернуться к списку</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

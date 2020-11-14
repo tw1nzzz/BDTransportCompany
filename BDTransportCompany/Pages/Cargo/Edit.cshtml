@@ -1,0 +1,55 @@
+﻿@page
+@model BDTransportCompany.Pages.Cargo.EditModel
+
+@{
+    ViewData["Title"] = "Изменить";
+}
+
+<h1>Изменить</h1>
+
+<h4>Грузы</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Cargos.ID" />
+            <div class="form-group">
+                <label asp-for="Cargos.Cargo_ID" class="control-label"></label>
+                <input asp-for="Cargos.Cargo_ID" class="form-control" />
+                <span asp-validation-for="Cargos.Cargo_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cargos.Title" class="control-label"></label>
+                <input asp-for="Cargos.Title" class="form-control" />
+                <span asp-validation-for="Cargos.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cargos.TypesOfCargosID" class="control-label"></label>
+                <input asp-for="Cargos.TypesOfCargosID" class="form-control" />
+                <span asp-validation-for="Cargos.TypesOfCargosID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cargos.ExpirationDate" class="control-label"></label>
+                <input asp-for="Cargos.ExpirationDate" class="form-control" />
+                <span asp-validation-for="Cargos.ExpirationDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cargos.Features" class="control-label"></label>
+                <input asp-for="Cargos.Features" class="form-control" />
+                <span asp-validation-for="Cargos.Features" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Вернуться к списку</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

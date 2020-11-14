@@ -1,0 +1,46 @@
+﻿@page
+@model BDTransportCompany.Pages.CarsBrand.DeleteModel
+
+@{
+    ViewData["Title"] = "Удалить";
+}
+
+<h1>Удалить</h1>
+
+<h3>Вы уверены что хотите удалить это?</h3>
+<div>
+    <h4>Марки автомобилей</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CarsBrands.CarBrand_ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CarsBrands.CarBrand_ID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CarsBrands.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CarsBrands.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CarsBrands.Specifications)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CarsBrands.Specifications)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CarsBrands.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CarsBrands.Description)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="CarsBrands.ID" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Вернуться к списку</a>
+    </form>
+</div>

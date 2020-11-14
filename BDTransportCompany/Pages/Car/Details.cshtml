@@ -1,0 +1,79 @@
+﻿@page
+@model BDTransportCompany.Pages.Car.DetailsModel
+
+@{
+    ViewData["Title"] = "Подробнее";
+}
+
+<h1>Подробнее</h1>
+
+<div>
+    <h4>Автомобили</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cars.Car_ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cars.Car_ID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cars.CarBrandID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cars.CarBrandID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cars.TypeOfCarID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cars.TypeOfCarID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cars.RegistrationNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cars.RegistrationNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cars.BodyNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cars.BodyNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cars.EngineNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cars.EngineNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cars.YearOfIssue)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cars.YearOfIssue)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cars.PositionID1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cars.PositionID1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cars.LastMaintenanceDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cars.LastMaintenanceDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cars.PositionID2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cars.PositionID2)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Cars.ID">Изменить</a> |
+    <a asp-page="./Index">Вернуться к списку</a>
+</div>

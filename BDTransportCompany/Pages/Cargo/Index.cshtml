@@ -1,0 +1,60 @@
+﻿@page
+@model BDTransportCompany.Pages.Cargo.IndexModel
+
+@{
+    ViewData["Title"] = "Таблица";
+}
+
+<h1>Таблица</h1>
+
+<p>
+    <a asp-page="Create">Добавить</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cargos[0].Cargo_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cargos[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cargos[0].TypesOfCargosID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cargos[0].ExpirationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cargos[0].Features)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Cargos) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cargo_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypesOfCargosID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpirationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Features)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Подробнее</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

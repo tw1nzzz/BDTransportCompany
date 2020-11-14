@@ -1,0 +1,84 @@
+﻿@page
+@model BDTransportCompany.Pages.Route.CreateModel
+
+@{
+    ViewData["Title"] = "Добавить";
+}
+
+<h1>Добавить</h1>
+
+<h4>Рейсы</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Routes.CarID" class="control-label"></label>
+                <input asp-for="Routes.CarID" class="form-control" />
+                <span asp-validation-for="Routes.CarID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Routes.Customer" class="control-label"></label>
+                <input asp-for="Routes.Customer" class="form-control" />
+                <span asp-validation-for="Routes.Customer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Routes.WhereFrom" class="control-label"></label>
+                <input asp-for="Routes.WhereFrom" class="form-control" />
+                <span asp-validation-for="Routes.WhereFrom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Routes.Where" class="control-label"></label>
+                <input asp-for="Routes.Where" class="form-control" />
+                <span asp-validation-for="Routes.Where" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Routes.DateOfDeparture" class="control-label"></label>
+                <input asp-for="Routes.DateOfDeparture" class="form-control" />
+                <span asp-validation-for="Routes.DateOfDeparture" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Routes.DateOfArrival" class="control-label"></label>
+                <input asp-for="Routes.DateOfArrival" class="form-control" />
+                <span asp-validation-for="Routes.DateOfArrival" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Routes.CargoID" class="control-label"></label>
+                <input asp-for="Routes.CargoID" class="form-control" />
+                <span asp-validation-for="Routes.CargoID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Routes.Price" class="control-label"></label>
+                <input asp-for="Routes.Price" class="form-control" />
+                <span asp-validation-for="Routes.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Routes.RecordOfThePayment" class="control-label"></label>
+                <input asp-for="Routes.RecordOfThePayment" class="form-control" />
+                <span asp-validation-for="Routes.RecordOfThePayment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Routes.TheMarkOnTheReturn" class="control-label"></label>
+                <input asp-for="Routes.TheMarkOnTheReturn" class="form-control" />
+                <span asp-validation-for="Routes.TheMarkOnTheReturn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Routes.StaffID" class="control-label"></label>
+                <input asp-for="Routes.StaffID" class="form-control" />
+                <span asp-validation-for="Routes.StaffID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Добавить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Вернуться к списку</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

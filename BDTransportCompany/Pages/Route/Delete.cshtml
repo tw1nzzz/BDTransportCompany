@@ -1,0 +1,88 @@
+﻿@page
+@model BDTransportCompany.Pages.Route.DeleteModel
+
+@{
+    ViewData["Title"] = "Удалить";
+}
+
+<h1>Удалить</h1>
+
+<h3>Вы уверены что хотите удалить это?</h3>
+<div>
+    <h4>Рейсы</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routes.CarID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routes.CarID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routes.Customer)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routes.Customer)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routes.WhereFrom)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routes.WhereFrom)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routes.Where)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routes.Where)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routes.DateOfDeparture)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routes.DateOfDeparture)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routes.DateOfArrival)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routes.DateOfArrival)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routes.CargoID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routes.CargoID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routes.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routes.Price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routes.RecordOfThePayment)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routes.RecordOfThePayment)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routes.TheMarkOnTheReturn)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routes.TheMarkOnTheReturn)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routes.StaffID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routes.StaffID)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Routes.ID" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Вернуться к списку</a>
+    </form>
+</div>

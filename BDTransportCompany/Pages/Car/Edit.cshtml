@@ -1,0 +1,80 @@
+﻿@page
+@model BDTransportCompany.Pages.Car.EditModel
+
+@{
+    ViewData["Title"] = "Изменить";
+}
+
+<h1>Изменить</h1>
+
+<h4>Автомобили</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Cars.ID" />
+            <div class="form-group">
+                <label asp-for="Cars.Car_ID" class="control-label"></label>
+                <input asp-for="Cars.Car_ID" class="form-control" />
+                <span asp-validation-for="Cars.Car_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cars.CarBrandID" class="control-label"></label>
+                <input asp-for="Cars.CarBrandID" class="form-control" />
+                <span asp-validation-for="Cars.CarBrandID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cars.TypeOfCarID" class="control-label"></label>
+                <input asp-for="Cars.TypeOfCarID" class="form-control" />
+                <span asp-validation-for="Cars.TypeOfCarID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cars.RegistrationNumber" class="control-label"></label>
+                <input asp-for="Cars.RegistrationNumber" class="form-control" />
+                <span asp-validation-for="Cars.RegistrationNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cars.BodyNumber" class="control-label"></label>
+                <input asp-for="Cars.BodyNumber" class="form-control" />
+                <span asp-validation-for="Cars.BodyNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cars.EngineNumber" class="control-label"></label>
+                <input asp-for="Cars.EngineNumber" class="form-control" />
+                <span asp-validation-for="Cars.EngineNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cars.YearOfIssue" class="control-label"></label>
+                <input asp-for="Cars.YearOfIssue" class="form-control" />
+                <span asp-validation-for="Cars.YearOfIssue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cars.PositionID1" class="control-label"></label>
+                <input asp-for="Cars.PositionID1" class="form-control" />
+                <span asp-validation-for="Cars.PositionID1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cars.LastMaintenanceDate" class="control-label"></label>
+                <input asp-for="Cars.LastMaintenanceDate" class="form-control" />
+                <span asp-validation-for="Cars.LastMaintenanceDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cars.PositionID2" class="control-label"></label>
+                <input asp-for="Cars.PositionID2" class="form-control" />
+                <span asp-validation-for="Cars.PositionID2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Вернуться к списку</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

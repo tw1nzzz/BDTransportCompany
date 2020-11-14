@@ -1,0 +1,54 @@
+﻿@page
+@model BDTransportCompany.Pages.CarsBrand.IndexModel
+
+@{
+    ViewData["Title"] = "Таблица";
+}
+
+<h1>Таблица</h1>
+
+<p>
+    <a asp-page="Create">Добавить</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CarsBrands[0].CarBrand_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarsBrands[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarsBrands[0].Specifications)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarsBrands[0].Description)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.CarsBrands) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarBrand_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Specifications)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Подробнее</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

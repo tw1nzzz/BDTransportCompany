@@ -1,0 +1,49 @@
+﻿@page
+@model BDTransportCompany.Pages.Cargo.DetailsModel
+
+@{
+    ViewData["Title"] = "Подробнее";
+}
+
+<h1>Подробнее</h1>
+
+<div>
+    <h4>Грузы</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cargos.Cargo_ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cargos.Cargo_ID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cargos.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cargos.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cargos.TypesOfCargosID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cargos.TypesOfCargosID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cargos.ExpirationDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cargos.ExpirationDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cargos.Features)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cargos.Features)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Cargos.ID">Изменить</a> |
+    <a asp-page="./Index">Вернуться к списку</a>
+</div>
