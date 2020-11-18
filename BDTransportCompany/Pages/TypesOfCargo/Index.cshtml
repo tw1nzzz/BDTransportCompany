@@ -44,6 +44,18 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
+                @{
+                    try
+                    {
+                        @Model.TypesOfCars.First(r => r.ID == item.TypeOfCarID).Name
+                    }
+                    catch
+                    {
+                        <p> Данных нет </p>
+                    }
+                }
+            </td>
+            <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |
                 <a asp-page="./Details" asp-route-id="@item.ID">Подробнее</a> |
                 <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>

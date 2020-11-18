@@ -20,10 +20,20 @@ namespace BDTransportCompany.Pages.Car
         }
 
         public IList<Cars> Cars { get;set; }
+        public IList<CarsBrands> CarsBrands { get; set; }
+        public IList<TypesOfCars> TypesOfCars { get; set; }
+        public IList<Staff> Staff { get; set; }
+        public IList<Positions> Positions { get; set; }
 
         public async Task OnGetAsync()
         {
             Cars = await _context.Cars.ToListAsync();
+            CarsBrands = await _context.CarsBrands.ToListAsync();
+            TypesOfCars = await _context.TypesOfCars.ToListAsync();
+            Staff = await _context.Staff.ToListAsync();
+            Positions = await _context.Positions.ToListAsync();
+
+
         }
     }
 }

@@ -68,6 +68,18 @@
                 @Html.DisplayFor(modelItem => item.PositionID)
             </td>
             <td>
+                @{
+                    try
+                    {
+                        @Model.Positions.First(r => r.ID == item.PositionID).JobTitle
+                    }
+                    catch
+                    {
+                        <p> Данных нет </p>
+                    }
+                }
+            </td>
+            <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |
                 <a asp-page="./Details" asp-route-id="@item.ID">Подробнее</a> |
                 <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>

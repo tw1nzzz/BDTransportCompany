@@ -20,10 +20,17 @@ namespace BDTransportCompany.Pages.Route
         }
 
         public IList<Routes> Routes { get;set; }
+        public IList<Cars> Cars { get; set; }
+        public IList<Cargos> Cargos { get; set; }
+        public IList<Staff> Staff { get; set; }
 
         public async Task OnGetAsync()
         {
             Routes = await _context.Routes.ToListAsync();
+            Cars = await _context.Cars.ToListAsync();
+            Cargos = await _context.Cargos.ToListAsync();
+            Staff = await _context.Staff.ToListAsync();
+
         }
     }
 }

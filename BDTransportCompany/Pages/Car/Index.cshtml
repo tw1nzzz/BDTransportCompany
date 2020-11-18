@@ -80,6 +80,54 @@
                 @Html.DisplayFor(modelItem => item.PositionID2)
             </td>
             <td>
+                @{
+                    try
+                    {
+                        @Model.CarsBrands.First(r => r.ID == item.CarBrandID).Title
+                    }
+                    catch
+                    {
+                        <p> Данных нет </p>
+                    }
+                }
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.TypesOfCars.First(r => r.ID == item.TypeOfCarID).Name
+                    }
+                    catch
+                    {
+                        <p> Данных нет </p>
+                    }
+                }
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Staff.First(r => r.ID == item.PositionID1).FullName
+                    }
+                    catch
+                    {
+                        <p> Данных нет </p>
+                    }
+                }
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Staff.First(r => r.ID == item.PositionID2).FullName
+                    }
+                    catch
+                    {
+                        <p> Данных нет </p>
+                    }
+                }
+            </td>
+            <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |
                 <a asp-page="./Details" asp-route-id="@item.ID">Подробнее</a> |
                 <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>

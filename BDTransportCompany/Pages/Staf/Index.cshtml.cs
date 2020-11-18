@@ -20,10 +20,12 @@ namespace BDTransportCompany.Pages.Staf
         }
 
         public IList<Staff> Staff { get;set; }
+        public IList<Positions> Positions { get; set; }
 
         public async Task OnGetAsync()
         {
             Staff = await _context.Staff.ToListAsync();
+            Positions = await _context.Positions.ToListAsync();
         }
     }
 }

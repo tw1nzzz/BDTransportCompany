@@ -20,10 +20,12 @@ namespace BDTransportCompany.Pages.Cargo
         }
 
         public IList<Cargos> Cargos { get;set; }
+        public IList<TypesOfCargos> TypesOfCargos { get; set; }
 
         public async Task OnGetAsync()
         {
             Cargos = await _context.Cargos.ToListAsync();
+            TypesOfCargos = await _context.TypesOfCargos.ToListAsync();
         }
     }
 }
