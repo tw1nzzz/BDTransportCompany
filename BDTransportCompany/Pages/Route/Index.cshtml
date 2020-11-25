@@ -53,7 +53,16 @@
 @foreach (var item in Model.Routes) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.CarID)
+                @{
+                    try
+                    {
+                        @Model.Cars.First(r => r.ID == item.CarID).CarBrand_ID
+                    }
+                    catch
+                    {
+                        <p> Данных нет </p>
+                    }
+                }
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Customer)
@@ -71,33 +80,6 @@
                 @Html.DisplayFor(modelItem => item.DateOfArrival)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CargoID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RecordOfThePayment)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TheMarkOnTheReturn)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StaffID)
-            </td>
-            <td>
-                @{
-                    try
-                    {
-                        @Model.Cars.First(r => r.ID == item.CarID).CarBrand_ID
-                    }
-                    catch
-                    {
-                        <p> Данных нет </p>
-                    }
-                }
-            </td>
-            <td>
                 @{
                     try
                     {
@@ -108,6 +90,15 @@
                         <p> Данных нет </p>
                     }
                 }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecordOfThePayment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TheMarkOnTheReturn)
             </td>
             <td>
                 @{

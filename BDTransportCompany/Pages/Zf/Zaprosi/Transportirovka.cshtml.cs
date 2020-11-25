@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
+using BDTransportCompany.Data;
+using BDTransportCompany.Models;
+
+namespace BDTransportCompany.Pages.Zf.Zaprosi
+{
+    public class Transportirovka : PageModel
+    {
+        private readonly BDTransportCompany.Data.BDTransportCompanyContext _context;
+
+        public Transportirovka(BDTransportCompany.Data.BDTransportCompanyContext context)
+        {
+            _context = context;
+        }
+
+        public IList<TypesOfCargos> TypesOfCargos { get; set; }
+        public IList<TypesOfCars> TypesOfCars { get; set; }
+
+        public async Task OnGetAsync()
+        {
+            TypesOfCargos = await _context.TypesOfCargos.ToListAsync();
+            TypesOfCars = await _context.TypesOfCars.ToListAsync();
+        }
+    }
+}

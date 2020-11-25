@@ -53,33 +53,6 @@
                 @Html.DisplayFor(modelItem => item.Car_ID)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CarBrandID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TypeOfCarID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RegistrationNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BodyNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EngineNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.YearOfIssue)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PositionID1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastMaintenanceDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PositionID2)
-            </td>
-            <td>
                 @{
                     try
                     {
@@ -104,6 +77,18 @@
                 }
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.RegistrationNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BodyNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EngineNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YearOfIssue)
+            </td>
+            <td>
                 @{
                     try
                     {
@@ -114,6 +99,9 @@
                         <p> Данных нет </p>
                     }
                 }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastMaintenanceDate)
             </td>
             <td>
                 @{
@@ -127,6 +115,7 @@
                     }
                 }
             </td>
+            
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |
                 <a asp-page="./Details" asp-route-id="@item.ID">Подробнее</a> |

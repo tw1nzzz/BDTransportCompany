@@ -1,0 +1,34 @@
+﻿@page
+@model BDTransportCompany.Pages.Zf.IndexModel
+@{
+    <div class="according" id="accordinExample">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Запросы
+                    </button>
+                </h5>
+            </div>
+            
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordingExample">
+                <div class="card-body">
+                    <a class="nav-link text-dark" asp-area="" asp-page="/Zf/Zaprosi/Otdelkadrov">Отдел кадров</a>
+                    <a class="nav-link text-dark" asp-area="" asp-page="/Zf/Zaprosi/Transportirovka">Транспортировка</a>
+                    <a class="nav-link text-dark" asp-area="" asp-page="/Zf/Zaprosi/Perevozimiegruzi">Перевозимые грузы</a>
+                    <a class="nav-link text-dark" asp-area="" asp-page="/Zf/Zaprosi/Avtopark">Автопарк</a>
+                    <a class="nav-link text-dark" asp-area="" asp-page="/Zf/Zaprosi/Zakazi">Заказы</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Фильтры
+                        </button>
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+}

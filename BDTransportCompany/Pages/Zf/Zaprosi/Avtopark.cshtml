@@ -1,0 +1,80 @@
+﻿@page
+@model BDTransportCompany.Pages.Zf.Zaprosi.Avtopark
+@{
+    <h1>Автопарк</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cars[0].CarBrandID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cars[0].TypeOfCarID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cars[0].PositionID1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cars[0].PositionID2)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Cars)
+            {
+                <tr>
+                    <td>
+                        @{
+                            try
+                            {
+                                @Model.CarsBrands.First(r => r.ID == item.CarBrandID).Title
+                            }
+                            catch
+                            {
+                                <p> Данных нет </p>
+                            }
+                        }
+                    </td>
+                    <td>
+                        @{
+                            try
+                            {
+                                @Model.TypesOfCars.First(r => r.ID == item.TypeOfCarID).Name
+                            }
+                            catch
+                            {
+                                <p> Данных нет </p>
+                            }
+                        }
+                    </td>
+                    <td>
+                        @{
+                            try
+                            {
+                                @Model.Staff.First(r => r.ID == item.PositionID1).FullName
+                            }
+                            catch
+                            {
+                                <p> Данных нет </p>
+                            }
+                        }
+                    </td>
+                    <td>
+                        @{
+                            try
+                            {
+                                @Model.Staff.First(r => r.ID == item.PositionID2).FullName
+                            }
+                            catch
+                            {
+                                <p> Данных нет </p>
+                            }
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}

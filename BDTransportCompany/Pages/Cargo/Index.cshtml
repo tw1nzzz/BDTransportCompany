@@ -41,15 +41,6 @@
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TypesOfCargosID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ExpirationDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Features)
-            </td>
-            <td>
                 @{
                     try
                     {
@@ -60,6 +51,12 @@
                         <p> Данных нет </p>
                     }
                 }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpirationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Features)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |

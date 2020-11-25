@@ -1,0 +1,40 @@
+﻿@page
+@model BDTransportCompany.Pages.Zf.Zaprosi.Transportirovka
+@{
+    <h1>Транспортировка</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.TypesOfCargos[0].Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TypesOfCargos[0].TypeOfCarID)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.TypesOfCargos)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @{
+                        try
+                        {
+                            @Model.TypesOfCars.First(r => r.ID == item.TypeOfCarID).Name
+                        }
+                        catch
+                        {
+                            <p> Данных нет </p>
+                        }
+                    }
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+}

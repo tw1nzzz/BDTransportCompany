@@ -38,12 +38,6 @@
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TypeOfCarID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
                 @{
                     try
                     {
@@ -54,6 +48,9 @@
                         <p> Данных нет </p>
                     }
                 }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |

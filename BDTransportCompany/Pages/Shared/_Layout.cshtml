@@ -22,16 +22,27 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Главная страница</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Staf/Index">Сотрудники</a>
+                            <div class="dropdown">
+                                <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Сотрудники
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Staf/Index">Сотрудники</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Position/Index">Должности</a>
+                                </div>
+                            </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Position/Index">Должности</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/TypesOfCar/Index">Виды автомобилей</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/CarsBrand/Index">Марки автомобилей</a>
+                            <div class="dropdown">
+                                <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Автомобили
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Car/Index">Автомобили</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/TypesOfCar/Index">Виды автомобилей</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/CarsBrand/Index">Марки автомобилей</a>
+                                </div>
+                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/TypesOfCargo/Index">Виды грузов</a>
@@ -40,10 +51,10 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Cargo/Index">Грузы</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Car/Index">Автомобили</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Route/Index">Рейсы</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Route/Index">Рейсы</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Zf/Index">Запросы и фильтры</a>
                         </li>
                     </ul>
                 </div>

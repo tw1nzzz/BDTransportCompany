@@ -1,0 +1,64 @@
+﻿@page
+@model BDTransportCompany.Pages.Zf.Zaprosi.Zakazi
+@{
+    <h1>Заказы</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Routes[0].CarID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Routes[0].CargoID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Routes[0].StaffID)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Routes)
+            {
+                <tr>
+                    <td>
+                        @{
+                            try
+                            {
+                                @Model.Cars.First(r => r.ID == item.CarID).CarBrand_ID
+                            }
+                            catch
+                            {
+                                <p> Данных нет </p>
+                            }
+                        }
+                    </td>
+                    <td>
+                        @{
+                            try
+                            {
+                                @Model.Cargos.First(r => r.ID == item.CargoID).Title
+                            }
+                            catch
+                            {
+                                <p> Данных нет </p>
+                            }
+                        }
+                    </td>
+                    <td>
+                        @{
+                            try
+                            {
+                                @Model.Staff.First(r => r.ID == item.StaffID).FullName
+                            }
+                            catch
+                            {
+                                <p> Данных нет </p>
+                            }
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}

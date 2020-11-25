@@ -1,0 +1,41 @@
+﻿@page
+@model BDTransportCompany.Pages.Zf.Zaprosi.Otdelkadrov
+@{
+    <h1>Отдел кадров</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Staff[0].FullName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Staff[0].PositionID)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Staff)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FullName)
+                    </td>
+                    <td>
+                        @{
+                            try
+                            {
+                                @Model.Positions.First(r => r.ID == item.PositionID).JobTitle
+                            }
+                            catch
+                            {
+                                <p> Данных нет </p>
+                            }
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
