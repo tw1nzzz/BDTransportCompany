@@ -1,0 +1,38 @@
+﻿@page
+@model BDTransportCompany.Pages.Zf.Filtri.Fzakazi1
+@{
+    <h1>Заказы1</h1>
+
+   
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Routes[0].Customer)
+                </th>
+                
+                <th>
+                    @Html.DisplayNameFor(model => model.Routes[0].Cargo_ID)
+                </th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Routes)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Customer)
+                    </td>
+                   
+                    <td>
+                        @Model.Cargo.Title
+                   </td>
+                   
+                    
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}

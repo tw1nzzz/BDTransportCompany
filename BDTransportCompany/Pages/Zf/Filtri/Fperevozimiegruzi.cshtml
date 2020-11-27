@@ -1,0 +1,34 @@
+﻿@page
+@model BDTransportCompany.Pages.Zf.Filtri.Fperevozimiegruzi
+@{
+
+    <h1>Перевозимые грузы</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cargos[0].Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cargos[0].TypesOfCargosID)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Cargos)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Model.TypesOfCargo.Title
+                        
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}

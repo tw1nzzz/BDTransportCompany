@@ -1,0 +1,32 @@
+﻿@page
+@model BDTransportCompany.Pages.Zf.Filtri.Favtopark
+@{
+    <h1>Автопарк</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.TypesOfCars[0].TypeofCar_ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TypesOfCars[0].Name)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.TypesOfCars)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TypeofCar_ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}

@@ -1,0 +1,31 @@
+﻿@page
+@model BDTransportCompany.Pages.Zf.Filtri.Fotdelkadrov
+@{
+    <h1>Отдел кадров</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Staff[0].FullName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Staff[0].PositionID)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Staff)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FullName)
+                    </td>
+                    <td>
+                        @Model.Position.JobTitle
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}

@@ -1,34 +1,119 @@
 ﻿@page
 @model BDTransportCompany.Pages.Zf.IndexModel
 @{
-    <div class="according" id="accordinExample">
-        <div class="card">
-            <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Запросы
-                    </button>
-                </h5>
-            </div>
-            
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordingExample">
-                <div class="card-body">
-                    <a class="nav-link text-dark" asp-area="" asp-page="/Zf/Zaprosi/Otdelkadrov">Отдел кадров</a>
-                    <a class="nav-link text-dark" asp-area="" asp-page="/Zf/Zaprosi/Transportirovka">Транспортировка</a>
-                    <a class="nav-link text-dark" asp-area="" asp-page="/Zf/Zaprosi/Perevozimiegruzi">Перевозимые грузы</a>
-                    <a class="nav-link text-dark" asp-area="" asp-page="/Zf/Zaprosi/Avtopark">Автопарк</a>
-                    <a class="nav-link text-dark" asp-area="" asp-page="/Zf/Zaprosi/Zakazi">Заказы</a>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header" id="headingTwo">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Фильтры
-                        </button>
-                    </h5>
-                </div>
+
+}
+<div class="accordion" id="accordionExample">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Запросы
+                </button>
+            </h2>
+        </div>
+
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+                <a class="nav-link text-dark" asp-area="" asp-page="/Zf/Zaprosi/Otdelkadrov">Отдел кадров</a>
+                <a class="nav-link text-dark" asp-area="" asp-page="/Zf/Zaprosi/Transportirovka">Транспортировка</a>
+                <a class="nav-link text-dark" asp-area="" asp-page="/Zf/Zaprosi/Perevozimiegruzi">Перевозимые грузы</a>
+                <a class="nav-link text-dark" asp-area="" asp-page="/Zf/Zaprosi/Avtopark">Автопарк</a>
+                <a class="nav-link text-dark" asp-area="" asp-page="/Zf/Zaprosi/Zakazi">Заказы</a>
             </div>
         </div>
     </div>
-}
+    <div class="card">
+        <div class="card-header" id="headingTwo">
+            <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Фильтры
+                </button>
+            </h2>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+                <form>
+                    Отобразить сотрудников отдельных должностей:
+                    <select asp-items="Model. StaffPositions" name="id" class="form-control-sm">
+                        <option value="-1">Сотрудник выбран</option>
+                    </select>
+                    <button asp-page="/Zf/Filtri/Fotdelkadrov" class="btn btn-primary">Выбрать</button>
+                </form>
+                <br />
+            </div>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+                <form>
+                    Отобразить отдельные виды грузов:
+                    <select asp-items="Model. PerevozimieGruzi" name="id" class="form-control-sm">
+                        <option value="-1">Вид груза не выбран</option>
+                    </select>
+                    <button asp-page="/Zf/Filtri/Fperevozimiegruzi" class="btn btn-primary">Выбрать</button>
+                </form>
+                <br />
+            </div>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+                <form>
+                    Отобразить отдельные виды автомобилей:
+                    <select asp-items="Model. Avtopark" name="id" class="form-control-sm">
+                        <option value="-1">Вид автомобиля не выбран</option>
+                    </select>
+                    <button asp-page="/Zf/Filtri/Favtopark" class="btn btn-primary">Выбрать</button>
+                </form>
+                <br />
+            </div>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+                <form>
+                    Отобразить заказы по перевозке отдельных грузов:
+                    <select asp-items="Model. Zakaz1" name="id" class="form-control-sm">
+                        <option value="-1">Заказ по перевозке отдельных грузов не выбран</option>
+                    </select>
+                    <button asp-page="/Zf/Filtri/Fzakazi1" class="btn btn-primary">Выбрать</button>
+                </form>
+                <br />
+            </div>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+                <form>
+                    Отобразить заказы отдельных заказчиков:
+                    <select asp-items="Model. Zakaz2" name="id" class="form-control-sm">
+                        <option value="-1">Заказы отдельных заказчиков не выбран</option>
+                    </select>
+                    <button asp-page="/Zf/Filtri/Fzakazi2" class="btn btn-primary">Выбрать</button>
+                </form>
+                <br />
+            </div>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+                <form>
+                    Отобразить оплаченные и не оплаченные заказы:
+                    <select asp-items="Model. Zakaz3" name="id" class="form-control-sm">
+                        <option value="-1">Оплаченные и не оплаченные заказы не выбраны</option>
+                    </select>
+                    <button asp-page="/Zf/Filtri/Fzakazi3" class="btn btn-primary">Выбрать</button>
+                </form>
+                <br />
+            </div>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+                <form>
+                    Отобразить вернувшиеся и не вернувшиеся из рейса автомобили:
+                    <select asp-items="Model. Zakaz4" name="id" class="form-control-sm">
+                        <option value="-1">Вернувшиеся и не вернувшиеся автомобили не выбраны</option>
+                    </select>
+                    <button asp-page="/Zf/Filtri/Fzakazi4" class="btn btn-primary">Выбрать</button>
+                </form>
+                <br />
+            </div>
+        </div>
+    </div>
+</div>
